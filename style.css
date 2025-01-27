@@ -1,61 +1,72 @@
+/* Basic reset for body */
 body {
-  font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(to right, #33001b, #ff0084);
-}
-.container {
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  box-shadow: 0px, 0px, 10px, rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: neonGlow 1s infinite alternate;
-}
-
-@keyframes neonGlow {
-  from {
-    box-shadow: 0px, 0px, 10px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; /* Reset margin */
+    background: linear-gradient(to right, #33001b, #ff0084); /* Gradient background */
   }
-  to {
-    box-shadow: 0px 0px 20px #e61380, 0px 0px 30px #ce1c78, 0px 0px 40px #ff0084;
+  
+  /* Container with styling */
+  .container {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blurring effect for background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Box shadow */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: neonGlow 1s infinite alternate; /* Glowing animation */
   }
-}
-
-h1 {
-  color: #ffffff;
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-textarea {
-  width: 500px;
-  height: 350px;
-  margin: 10px auto;
-  display: block;
-  font-size: 24px;
-  color: rgba(0, 0, 0);
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  resize: none;
-  animation: slideIn 1s ease;
-}
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translatey(-20px);
+  
+  /* Glowing effect for container */
+  @keyframes neonGlow {
+    from {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    to {
+      box-shadow: 0px 0px 20px #e61380, 0px 0px 30px #ce1c78, 0px 0px 40px #ff0084;
+    }
   }
-  to {
-    opacity: 1;
-    transform: translatey(0);
+  
+  /* Styling for the header */
+  h1 {
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 20px;
   }
-}
-
-button{
+  
+  /* Styling for the textarea */
+  textarea {
+    width: 500px;
+    height: 350px;
+    margin: 10px auto;
+    display: block;
+    font-size: 24px;
+    color: #333;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+    animation: slideIn 1s ease; /* Slide-in effect */
+  }
+  
+  /* Slide-in effect for textarea */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Button styling */
+  button {
     padding: 15px 30px;
     background-color: #4caf50;
     width: 500px;
@@ -66,16 +77,31 @@ button{
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-   transition: background-color 0.3s ease;
-}
-button:hover{
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  button:hover {
     background-color: #33022b;
-}
-#result{
+  }
+  
+  /* Result text styling */
+  #result {
     font-size: 20px;
     margin-top: 20px;
     color: azure;
     font-weight: bold;
-  animation: neonGlow 1s infinite alternate;
-
-}
+    animation: neonGlow 1s infinite alternate; /* Glowing animation */
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+      width: 90%;
+    }
+    textarea, button {
+      width: 100%;
+    }
+  }
+  
